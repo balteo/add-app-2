@@ -15,8 +15,8 @@ describe('AdsList.vue', () => {
     beforeEach(() => {
         component = mount(AdsList, {
             propsData: {
-                filter: null
-            }
+                filter: null,
+            },
         });
     });
 

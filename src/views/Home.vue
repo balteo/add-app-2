@@ -14,14 +14,13 @@ import AdsSearch from '@/components/AdsSearch.vue';
 @Component({
     components: {
         AdsList,
-        AdsSearch
+        AdsSearch,
     },
 })
 export default class Home extends Vue {
-    inputSearch: string = '';
+    public inputSearch: string = '';
 
-    search(inputSearch: string) {
-        console.log('inputSearch', inputSearch);
+    public search(inputSearch: string) {
         this.inputSearch = inputSearch;
     }
 }

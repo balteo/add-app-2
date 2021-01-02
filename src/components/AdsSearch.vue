@@ -14,11 +14,10 @@ import { Emit } from 'vue-property-decorator';
 
 export default class AdsSearch extends Vue {
 
-    searchInput: string = '';
+    public searchInput: string = '';
 
     @Emit('on-search')
-    onSearch() {
-        console.log('searchInput', this.searchInput);
+    public onSearch() {
         return this.searchInput;
     }
 }

@@ -14,16 +14,16 @@ import { Ad } from '@/models/ad.model';
 @Component
 export default class AdsList extends Vue {
 
-    ads: Ad[] = [];
+    public ads: Ad[] = [];
     @Prop() private filter!: string;
 
     @Watch('filter')
-    async onPropertyChange() {
+    public async onPropertyChange() {
         const response = await fetch('/api/ads?q=' + this.filter);
         this.ads = await response.json();
     }
 
-    async created() {
+    public async created() {
         const response = await fetch('/api/ads');
         this.ads = await response.json();
     }
