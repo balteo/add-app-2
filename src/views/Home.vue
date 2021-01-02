@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <div class="home">
+        <AdsSearch @on-search="search"/>
+        <AdsList :filter="inputSearch"/>
+    </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import AdsList from '@/components/AdsList.vue';
+import AdsSearch from '@/components/AdsSearch.vue';
+
 
 @Component({
-  components: {
-    HelloWorld,
-  },
+    components: {
+        AdsList,
+        AdsSearch
+    },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+    inputSearch: string = '';
+
+    search(inputSearch: string) {
+        console.log('inputSearch', inputSearch);
+        this.inputSearch = inputSearch;
+    }
+}
 </script>
