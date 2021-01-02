@@ -10,14 +10,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Emit } from 'vue-property-decorator';
 
 export default class AdsSearch extends Vue {
 
     searchInput: string = '';
 
+    @Emit('on-search')
     onSearch() {
         console.log('searchInput', this.searchInput);
-        this.$emit('on-search', this.searchInput);
+        return this.searchInput;
     }
 }
 </script>
